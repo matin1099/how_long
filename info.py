@@ -1,4 +1,6 @@
-"""# import module 
+"""
+#  https://www.geeksforgeeks.org/get-video-duration-using-python-opencv/
+# import module 
 import cv2 
 import datetime 
 
