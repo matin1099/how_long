@@ -48,7 +48,8 @@ def counter(video_path:list):
     folder_time = datetime.timedelta(seconds=fulltime) 
     print(f'Whole folder will be {folder_time}')
 
-if __name__=='__main__':
+
+def run():
     term_args = sys.argv[:]
     try:
         subfolder = term_args[1]+'/'
