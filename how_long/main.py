@@ -2,18 +2,19 @@ import argparse
 
 def run():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f","--folder", help=" Search in specific folder.\n\texample: how_long -f parentDir/childDir",
+    parser.add_argument("-f","--folder", help=" Search in specific folder.example: how_long -f parentDir/childDir",
                         action='store')
     parser.add_argument("-s","--subdirs", help="Going for all subdirs in parent dirs", action="store_true")
-
+    parser.add_argument("-v", "--verbose", help="Return video lenght of each subdir sepratly.", action="store_true")
 
 
     args = parser.parse_args()
 
     if args.folder != None:
-        abcd = args.folder
-        print(type(abcd))
-        print(abcd)
+        AllSubdir = args.folder
+        subdirs = args.subdirs
+        print(AllSubdir)
+        print(subdirs)
     else:
         print('dosent work!')
 
