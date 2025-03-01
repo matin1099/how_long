@@ -1,7 +1,7 @@
 import datetime
 
 from loguru import logger
-from duration import duration # type: ignore
+from .duration import duration # type: ignore
 
 def counter_norm(video_path:list):
     fulltime = 0
