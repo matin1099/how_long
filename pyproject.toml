@@ -1,0 +1,15 @@
+[project]
+name = "how_long"
+authors = [{name = "matin1099", email = "matin1378718@gmail.com"}]
+version = "2.1.3"
+requires-python = ">=3.11"
+dependencies = [
+    "opencv-python>=4.11",
+    "loguru>=0.7.3"
+]
+
+[build-system]
+requires = ["setuptools"]
+
+[project.scripts]
+how-long = "how_long.main:run"
