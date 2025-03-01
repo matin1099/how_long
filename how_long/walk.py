@@ -1,17 +1,16 @@
 import os
 from  loguru import logger
-from counter import counter_subdir, counter_norm
-from duration import duration
+from .counter import counter_subdir, counter_norm
+from .duration import duration
 
 
 def subfolders_walk():
     abs_address = os.getcwd()
-    logger.info('Getting full address.')
-
-    print("Listing Python file:")
+    logger.trace('Getting full address.')
+    logger.info("Start walk!")
     pathes = []
     dir_list = {}
-    logger.info('Getting full address.')
+    logger.trace('Getting full address.')
 
     for dirpath, dirnames, filenames in os.walk("."):
         if dirnames != []:
@@ -32,17 +31,21 @@ def subfolders_walk():
 
 def folder_walk(subfolder:str):
     if subfolder != './':
+        logger.info(f"Start walk in {subfolder}!")
+
         Issub = True 
     else:
+        logger.info("Start walk in root!")
+
         Issub = False
 
     abs_address = os.getcwd()
-    logger.info('Getting full address.')
+    logger.trace('Getting full address.')
     dir_files = os.listdir(subfolder)
-    logger.info('Getting folder files.')
+    logger.trace('Getting folder files.')
     vids=[]
     
-    logger.debug('Start to search for mp4s.')
+    logger.trace('Start to search for mp4s.')
     for file in dir_files:
         if file.endswith('.mp4') and Issub == True:
             vids.append(abs_address+'/'+subfolder+file)
@@ -51,7 +54,3 @@ def folder_walk(subfolder:str):
     return(vids)
 
 
-pathes, dir_list = subfolders_walk()
-#print(dir_list.values())
-#counter_subdir(dir_list)
-counter_norm(folder_walk('./'))

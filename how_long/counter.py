@@ -1,5 +1,7 @@
 import datetime
-from duration import duration
+
+from loguru import logger
+from duration import duration # type: ignore
 
 def counter_norm(video_path:list):
     fulltime = 0
@@ -19,5 +21,5 @@ def counter_subdir(video_dict:dict):
     fulltime = datetime.timedelta(seconds=fulltime) 
     print("result of each folder:")
     for key in video_dict.keys():
-        print(f'\t{key} will have {str(video_dict[key]):>}\t\t\t')
+        print(f'\t{key} will have {video_dict[key]}')
     print(f"In total: this root folder will be {fulltime}")
