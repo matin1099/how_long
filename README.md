@@ -15,9 +15,12 @@ pip install -e .
 
 ## دستورات
 ### جستوجو فقط در پوشه کنونی
-``` $ how-long```
+``` 
+$ how-long
+```
 ### جستوجو در یک پوشه بخصوص
-``` $ how-long -f foo
+```
+ $ how-long -f foo
 $ how-long --folder foo
 ```
 
